@@ -1,0 +1,37 @@
+@use '../../styles/partials/variables' as *;
+
+body{
+    background-color: $color-secondary-dark;
+    // background-image: url('../../assets/images/waves.jpg');
+    // background-size: contain;
+}
+
+.login{
+    background-color: $color-secondary-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40%;
+
+    &__button{
+        color: white;
+        text-decoration: none;
+        margin: 1rem 0;
+        border: 1px solid $color-secondary-light;
+        width: 10rem;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        padding: .25rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover{background-color: $color-primary-light;}
+
+        &--signup{
+            background-color: $color-primary-dark;
+            border-color: $color-primary-dark;
+        }
+    }
+
+}
