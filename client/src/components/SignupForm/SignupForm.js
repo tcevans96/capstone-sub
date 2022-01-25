@@ -15,7 +15,7 @@ export default class SignupForm extends Component {
         event.preventDefault();
 
         if(event.target.password.value === event.target.confirmPassword.value){
-            console.log("registration successful");
+            alert("registration successful");
             axios.post('http://localhost:8080/users',{
                 firstName: event.target.firstName.value,
                 lastName: event.target.lastName.value,
@@ -34,9 +34,9 @@ export default class SignupForm extends Component {
     }
 
     render() {
-        if(this.state.successful){
-            return <Redirect to='/' />
-        }
+        
+        if(this.state.successful){return <Redirect to='/' />}
+        
         return (
             <main className='signup'>
                 <form className='form' onSubmit={this.handleSubmit}>
@@ -51,7 +51,6 @@ export default class SignupForm extends Component {
                     <label htmlFor='confirmPassword'>Confirm Password</label>
                     <input className='form__field' name='confirmPassword' id='confirmPassword' type="password" />
                     <button className='form__button'>Sign Up</button>
-                    
                    
                 </form>
                 <p>
