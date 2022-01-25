@@ -1,6 +1,6 @@
 module.exports = [
     {
-        id: '9c40e458-6bcb-4a6e-a060-948062b52416',
+        
         name: 'Ableton',
         category: 'software',
         logo: 'http://localhost:8080/static/logos/ableton.svg',
@@ -8,7 +8,7 @@ module.exports = [
         renewDate: 'May 13',
     },
     {
-        id:'a1f5f757-509b-4a84-9003-5b85bd698828',
+    
         name: 'Amazon',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/amazon.svg',
@@ -16,7 +16,7 @@ module.exports = [
         renewDate: 'May 24',
     },
     {
-        id: 'd253e179-abda-4ad7-a92f-2574fd7bc344',
+        
         name: 'Apple Music',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/apple-music.svg',
@@ -24,7 +24,7 @@ module.exports = [
         renewDate: 'May 5',
     },
     {
-        id: 'a3f28c5a-8629-4130-a226-99ca16676802',
+        
         name: 'Blue Apron',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/blue-apron.svg',
@@ -32,7 +32,7 @@ module.exports = [
         renewDate: 'May 7',
     },
     {
-        id: '07dab48b-c257-4a91-a741-42c20b90b0cb',
+        
         name: 'Disney Plus',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/disney.svg',
@@ -40,7 +40,7 @@ module.exports = [
         renewDate: 'June 4',
     },
     {
-        id: '35be876e-abda-4a32-b518-62fcba6b30f9',
+        
         name: 'Dropbox',
         category: 'software',
         logo: 'http://localhost:8080/static/logos/dropbox.svg',
@@ -48,7 +48,7 @@ module.exports = [
         renewDate: 'June 14',
     },
     {
-        id: '6d46213f-fac9-4e93-8dd9-187881eb8c70',
+        
         name: 'HBO Max',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/hbo-max.svg',
@@ -56,7 +56,7 @@ module.exports = [
         renewDate: 'June 10',
     },
     {
-        id: 'b69f4bc3-01ad-4b88-884e-4685d34f529d',
+        
         name: 'Homechef',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/homechef.svg',
@@ -64,7 +64,7 @@ module.exports = [
         renewDate: 'May 8',
     },
     {
-        id: 'c092c07c-8262-4ef2-8ac5-58414117dc0e',
+        
         name: 'Hulu',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/hulu.svg',
@@ -72,7 +72,7 @@ module.exports = [
         renewDate: 'June 4',
     },
     {
-        id: '639970fb-a7c8-4cd8-a59d-97bc43245c84',
+        
         name: 'Kaiser Permanente',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/kaiser-permanente.svg',
@@ -80,7 +80,7 @@ module.exports = [
         renewDate: 'May 23',
     },
     {
-        id: 'bcee9faf-5226-4260-a2d5-32bd9625c397',
+        
         name: 'MeUndies',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/meundies.svg',
@@ -88,7 +88,7 @@ module.exports = [
         renewDate: 'June 7',
     },
     {
-        id: '3cb9f506-a234-4407-b978-049700ae0f00',
+        
         name: 'Netflix',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/netflix.svg',
@@ -96,7 +96,7 @@ module.exports = [
         renewDate: 'June 24',
     },
     {
-        id: '2a241418-2c1f-4af7-b320-28704ee8ce9e',
+        
         name: 'Photoshop',
         category: 'software',
         logo: 'http://localhost:8080/static/logos/photoshop.svg',
@@ -104,7 +104,7 @@ module.exports = [
         renewDate: 'June 1',
     },
     {
-        id: 'e5dcb34d-d78b-4e3a-9e06-d875c1b9efea',
+        
         name: 'Sling TV',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/sling-tv.svg',
@@ -112,7 +112,7 @@ module.exports = [
         renewDate: 'June 1',
     },
     {
-        id: 'c2153ba8-9fe0-43a1-a37f-debf29c995dc',
+        
         name: 'SoundCloud',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/soundcloud.svg',
@@ -120,7 +120,7 @@ module.exports = [
         renewDate: 'June 1',
     },
     {
-        id: '52f25af4-af33-470c-8f76-d8f20f2d4b1d',
+        
         name: 'Spotify',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/spotify.svg',
@@ -128,7 +128,7 @@ module.exports = [
         renewDate: 'June 1',
     },
     {
-        id: '12eee25c-63f0-4fab-96ed-ae6376ad708d',
+        
         name: 'Trunk Club',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/trunk-club.png',
@@ -136,7 +136,7 @@ module.exports = [
         renewDate: 'June 1',
     },
     {
-        id: 'd5a6dd9e-215d-4f1d-a305-1f69c9d77d5c',
+        
         name: 'VRV',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/vrv.png',
