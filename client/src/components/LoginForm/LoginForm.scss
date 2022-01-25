@@ -11,6 +11,22 @@
             text-decoration: underline;
         }
     }
+
+    &__error{
+        display: none;
+
+        &--shown{
+            margin-top: -1rem;
+            display: flex;
+            color: red;
+            padding: 0.5rem;
+            align-items: center;
+        }
+
+        &--icon{
+            margin-right: 0.5rem;
+        }
+    }
 }
 
 

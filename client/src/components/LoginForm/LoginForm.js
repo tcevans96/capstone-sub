@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
 import './LoginForm.scss';
+import errorIcon from '../../assets/icons/error-24px.svg'
 
 export default class LoginForm extends Component {
     state = {
         currentUser: {},
         users: [],
         isLoginSuccessful: false,
-        error: ''
+        error: 0
     };
 
     componentDidMount(){
@@ -36,12 +37,12 @@ export default class LoginForm extends Component {
 
             if(currentUser.password === event.target.password.value){
                 this.setState({isLoginSuccessful: true})
-            }else{
-                this.setState({error: 'invalid password'})
             }
-        }else{
-            this.setState({error: 'user not found'})
+            else{this.setState({error: 1})}
         }
+        else{this.setState({error: 2})}
+
+        event.target.reset();
     }
   
     render() {
@@ -56,6 +57,9 @@ export default class LoginForm extends Component {
                     <input className='form__field' name='password' id='password' type="password" />
                     <button className='form__button'>Log In</button>
                 </form>
+
+                <span className={this.state.error === 1 ? 'login__error--shown' : 'login__error'}> <img className='login__error--icon' src={errorIcon} alt="error" /> INVALID PASSWORD! PLEASE TRY AGAIN.</span>
+                <span className={this.state.error === 2 ? 'login__error--shown' : 'login__error'}>  <img className='login__error--icon' src={errorIcon} alt="error" /> USER NOT FOUND! PLEASE TRY AGAIN.</span>
                 
                 <p>
                     Need an account? <Link className='login__redirect' to="/signup">Sign up</Link>

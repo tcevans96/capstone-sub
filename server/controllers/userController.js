@@ -11,18 +11,6 @@ exports.index = (_req, res) => {
       );
   };
 
-  exports.getUser= (req,res) => {
-    knex('users')
-      .where({username: req.body.username})
-      .then((data) => {
-        res.status(200).json(data);
-        console.log(data);
-      })
-      .catch((err) =>
-        res.status(400).send(`Error retrieving users: ${err}`)
-      );
-  }
-
   exports.newUser = (req,res) => {
 
     const {firstName, lastName, username, password} = req.body
