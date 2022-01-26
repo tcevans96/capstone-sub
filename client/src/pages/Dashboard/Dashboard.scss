@@ -4,9 +4,12 @@ body{
     background-color: white;
     color: $color-secondary-light;
     background-image: url('../../assets/images/wave-pattern.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
 }
 
 .dashboard{
     padding: 1rem;
+    height: 100vh;
 }

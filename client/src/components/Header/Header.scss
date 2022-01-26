@@ -8,9 +8,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    margin-bottom: 1rem;;
+    margin-bottom: 1rem;
+    position: fixed;
+    width: 100%;
 
     &__title{
         margin: 0;
+    }
+
+    &__icon{
+        height: 2rem;
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import './Dashboard.scss';
 export default class Dashboard extends Component {
     state = {
@@ -13,6 +14,7 @@ export default class Dashboard extends Component {
             <main className='dashboard'>
                 Hello {this.state.currentUser.firstName}
             </main>
+            <Footer/>
         </div>
     );
   }
