@@ -1,0 +1,14 @@
+@use '../../styles/partials/variables' as *;
+
+.discover{
+    padding: 1rem;
+    height: 100vh;
+    background-color: $color-secondary-light;
+    color: $color-secondary-light;
+    background-image: url('../../assets/images/wave-pattern.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    margin-top: 4.5rem;
+    
+}
