@@ -12,11 +12,11 @@ export default function Footer() {
             <img className='footer__icon' src={home} alt="dashboard icon" />
             <span className='footer__page'>Dashboard</span>
         </Link>
-        <Link to='/dashboard' className='footer__link'>
+        <Link to='/discover' className='footer__link'>
             <img className='footer__icon' src={discover} alt="dashboard icon" />
             <span className='footer__page'>Discover</span>
         </Link>
-        <Link to='/dashboard' className='footer__link'>
+        <Link to='/subscriptions' className='footer__link'>
             <img className='footer__icon' src={calendar} alt="dashboard icon" />
             <span className='footer__page'>Subscriptions</span>
         </Link>

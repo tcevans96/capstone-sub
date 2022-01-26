@@ -13,6 +13,9 @@ export default class Dashboard extends Component {
             <Header/>
             <main className='dashboard'>
                 Hello {this.state.currentUser.firstName}
+                <div>
+                    
+                </div>
             </main>
             <Footer/>
         </div>
