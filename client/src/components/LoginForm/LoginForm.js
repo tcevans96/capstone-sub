@@ -24,6 +24,7 @@ export default class LoginForm extends Component {
     }
 
     handleSubmit = (event) => {
+        
         event.preventDefault();
 
         const {users, currentUser} = this.state;
@@ -46,7 +47,12 @@ export default class LoginForm extends Component {
     }
   
     render() {
-        if(this.state.isLoginSuccessful){return <Redirect to='/dashboard'/>}
+        const {error, isLoginSuccessful, currentUser} = this.state;
+
+        if(isLoginSuccessful && currentUser){
+            
+            return <Redirect to={{pathname: '/dashboard', state: {currentUser: currentUser}}}/>
+        }
 
         return (
             <main className='login'>
@@ -58,12 +64,10 @@ export default class LoginForm extends Component {
                     <button className='form__button'>Log In</button>
                 </form>
 
-                <span className={this.state.error === 1 ? 'login__error--shown' : 'login__error'}> <img className='login__error--icon' src={errorIcon} alt="error" /> INVALID PASSWORD! PLEASE TRY AGAIN.</span>
-                <span className={this.state.error === 2 ? 'login__error--shown' : 'login__error'}>  <img className='login__error--icon' src={errorIcon} alt="error" /> USER NOT FOUND! PLEASE TRY AGAIN.</span>
+                <span className={error === 1 ? 'login__error--shown' : 'login__error'}> <img className='login__error--icon' src={errorIcon} alt="error" /> INVALID PASSWORD! PLEASE TRY AGAIN.</span>
+                <span className={error === 2 ? 'login__error--shown' : 'login__error'}>  <img className='login__error--icon' src={errorIcon} alt="error" /> USER NOT FOUND! PLEASE TRY AGAIN.</span>
                 
-                <p>
-                    Need an account? <Link className='login__redirect' to="/signup">Sign up</Link>
-                </p>
+                <p>Need an account? <Link className='login__redirect' to="/signup">Sign up</Link></p>
             </main>
         );
   }

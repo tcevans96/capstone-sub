@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
 import './SignupForm.scss'
+import errorIcon from '../../assets/icons/error-24px.svg'
 
 export default class SignupForm extends Component {
     
     state = {
         successful: false,
         isValidPassword: false,
-        error: ""
+        error: 0
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
 
         if(event.target.password.value === event.target.confirmPassword.value){
-            alert("registration successful");
             axios.post('http://localhost:8080/users',{
                 firstName: event.target.firstName.value,
                 lastName: event.target.lastName.value,
@@ -29,13 +29,16 @@ export default class SignupForm extends Component {
                 })   
             })
         }else{
-            this.setState({isValidPassword: false})
+            this.setState({error: 1})
         }
+
+        event.target.reset();
     }
 
     render() {
+        const {error, successful} = this.state;
         
-        if(this.state.successful){return <Redirect to='/' />}
+        if(successful){return <Redirect to='/' />}
         
         return (
             <main className='signup'>
@@ -50,12 +53,12 @@ export default class SignupForm extends Component {
                     <input className='form__field' name='password' id='password' type="password" />
                     <label htmlFor='confirmPassword'>Confirm Password</label>
                     <input className='form__field' name='confirmPassword' id='confirmPassword' type="password" />
-                    <button className='form__button'>Sign Up</button>
-                   
+                    <button className='form__button'>Sign Up</button>       
                 </form>
-                <p>
-                    Already have an account? <Link className='signup__redirect' to="/login">Log in</Link>
-                </p>
+                
+                <span className={error === 1 ? 'signup__error--shown' : 'signup__error'}> <img className='signup__error--icon' src={errorIcon} alt="error" /> PASSWORDS DO NOT MATCH!</span>
+
+                <p>Already have an account? <Link className='signup__redirect' to="/login">Log in</Link></p>
             </main>
         );
     }
