@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-
+import Header from '../../components/Header/Header';
+import './Dashboard.scss';
 export default class Dashboard extends Component {
     state = {
         currentUser: this.props.location.state.currentUser
     }
   
     render() {
-    return <div>Hello {this.state.currentUser.firstName}</div>;
+    return (
+        <div>
+            <Header/>
+            <main className='dashboard'>
+                Hello {this.state.currentUser.firstName}
+            </main>
+        </div>
+    );
   }
 }
 
