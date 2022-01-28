@@ -1,7 +1,4 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
+
 exports.up = function(knex) {
   return knex.schema
     .createTable('users', (table)=>{
@@ -18,15 +15,28 @@ exports.up = function(knex) {
         table.string('category').notNullable();
         table.string('logo').notNullable();
         table.float('price').notNullable();
+        table.timestamp('updated_at').defaultTo(knex.fn.now());
+    })
+    .createTable('user_subs', (table)=>{
+        table.increments('id').primary();
+        table.string('name').notNullable();
+        table.string('category').notNullable();
+        table.string('logo').notNullable();
+        table.float('price').notNullable();
         table.string('renewDate').notNullable();
+        table
+            .integer('user_id')
+            .unsigned()
+            .notNullable()
+            .references('id')
+            .inTable('users')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE');
         table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
 };
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
+
 exports.down = function(knex) {
-    return knex.schema.dropTable('users').dropTable('subscriptions');
+    return knex.schema.dropTable('users').dropTable('subscriptions').dropTableIfExists('user_subs');
 };

@@ -4,15 +4,19 @@ import Footer from '../../components/Footer/Footer';
 import './Dashboard.scss';
 export default class Dashboard extends Component {
     state = {
-        currentUser: this.props.location.state.currentUser
+        currentUser: sessionStorage.getItem('currentUserName')
     }
-  
+
+    componentDidMount(){
+        
+    }
+
     render() {
     return (
         <div>
             <Header/>
             <main className='dashboard'>
-                Hello {this.state.currentUser.firstName}
+                Hello {this.state.currentUser}
                 <div>
                     
                 </div>

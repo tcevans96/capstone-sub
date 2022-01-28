@@ -27,16 +27,20 @@ export default class LoginForm extends Component {
         
         event.preventDefault();
 
-        const {users, currentUser} = this.state;
+        const {users} = this.state;
 
         const foundUser = users.find((user)=>{
             return user.username === event.target.username.value;
         })
+
+        sessionStorage.setItem('currentUserId', foundUser.id);
+        sessionStorage.setItem('currentUserName', foundUser.firstName);
         
         if(foundUser){
             this.setState({currentUser: foundUser})
 
-            if(currentUser.password === event.target.password.value){
+            if(foundUser.password === event.target.password.value){
+                
                 this.setState({isLoginSuccessful: true})
             }
             else{this.setState({error: 1})}
@@ -65,7 +69,7 @@ export default class LoginForm extends Component {
                 </form>
 
                 <span className={error === 1 ? 'login__error--shown' : 'login__error'}> <img className='login__error--icon' src={errorIcon} alt="error" /> INVALID PASSWORD! PLEASE TRY AGAIN.</span>
-                <span className={error === 2 ? 'login__error--shown' : 'login__error'}>  <img className='login__error--icon' src={errorIcon} alt="error" /> USER NOT FOUND! PLEASE TRY AGAIN.</span>
+                <span className={error === 2 ? 'login__error--shown' : 'login__error'}> <img className='login__error--icon' src={errorIcon} alt="error" /> USER NOT FOUND! PLEASE TRY AGAIN.</span>
                 
                 <p>Need an account? <Link className='login__redirect' to="/signup">Sign up</Link></p>
             </main>

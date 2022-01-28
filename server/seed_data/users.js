@@ -1,6 +1,5 @@
 module.exports = [
     {
-     
         firstName: 'Abel',
         lastName: 'Simmons',
         username: 'user1',
