@@ -25,7 +25,7 @@ export default class DiscoverPage extends Component {
         <>
         <Header/>
         <main className='discover'>
-            <h2>Discover Subscriptions</h2>
+            <h1>Discover Subscriptions</h1>
             <SubscriptionList subs={this.state.subscriptions}/>
         </main>
         <Footer/>

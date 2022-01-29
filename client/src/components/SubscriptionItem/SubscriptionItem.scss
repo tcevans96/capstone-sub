@@ -1,7 +1,7 @@
 @use '../../styles/partials/variables' as *;
 
 .sub-item{
-    border: 1px solid black;
+    border: 1px solid #977068;
     border-radius: 20px;
     background-color: #977068;
     margin-bottom: 1rem;
@@ -12,6 +12,7 @@
     font-weight: 600;
     font-size: 1.25rem;
     color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
     &__logo{
         height: 3rem;
