@@ -6,7 +6,7 @@ router.route('/')
     .get(userController.index)
     .post(userController.newUser)
     
-router.route('/:id')
+router.route('/subs')
     .get(userController.subIndex)    
     .post(userController.userSubs);
 
