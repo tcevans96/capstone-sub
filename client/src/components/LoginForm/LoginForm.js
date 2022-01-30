@@ -33,15 +33,15 @@ export default class LoginForm extends Component {
             return user.username === event.target.username.value;
         })
 
-        sessionStorage.setItem('currentUserId', foundUser.id);
-        sessionStorage.setItem('currentUserName', foundUser.firstName);
         
         if(foundUser){
             this.setState({currentUser: foundUser})
-
+            
             if(foundUser.password === event.target.password.value){
                 
                 this.setState({isLoginSuccessful: true})
+                sessionStorage.setItem('currentUserId', foundUser.id);
+                sessionStorage.setItem('currentUserName', foundUser.firstName);
             }
             else{this.setState({error: 1})}
         }

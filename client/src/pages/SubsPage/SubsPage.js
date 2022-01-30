@@ -8,7 +8,10 @@ import axios from 'axios';
 export default class SubsPage extends Component {
   
   state = {
-    subscriptions: []
+    subscriptions: [],
+    totalMonthlyFees: 0,
+    isLoaded: false
+
   }
 
   componentDidMount(){
@@ -17,18 +20,36 @@ export default class SubsPage extends Component {
 
     axios.get('http://localhost:8080/users/' + id)
       .then((response) => {
-        this.setState({subscriptions: response.data})
-      })
+        this.setState({subscriptions: response.data, isLoaded:true})
+    })
 
+    if(this.state.isLoaded){
+      this.getMonthlyFees();
+    }
+  }
+
+  getMonthlyFees = () => {
+      let monthlyFees = 0;
+      let subs = this.state.subscriptions;
+
+      for(let i = 0; i < subs.length; i++){
+        monthlyFees += subs[i].price;
+      }
+      
+      this.setState({totalMonthlyFees: monthlyFees})
   }
 
   render() {
+    
     return (
         <div>
             <Header/>
             <main className='subs'>
                 <h1>My Subscriptions</h1>
-                
+                <div className='subs__fees'>
+                  <span>Total Monthly Fees: </span>
+                  <span>${this.state.totalMonthlyFees}</span>
+                </div>
                 {this.state.subscriptions.map((sub)=>{
                   return <SubscriptionItem key={sub.id} logo={sub.logo} name={sub.name} price={sub.price}/>
                 })}

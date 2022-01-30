@@ -53,7 +53,7 @@ export default class SubscriptionItem extends Component {
       <img className='sub-item__logo' src={logo} alt="company logo" />
       <span>{name}</span>
       <span>${price}</span>
-      {this.state.isDiscoverPage ? <button onClick={this.handleAddSub}>+</button> : <Link to={'/details/' + name}>X</Link>}
+      {this.state.isDiscoverPage ? <button onClick={this.handleAddSub}>+</button> : <Link  className='sub-item__link' to={'/details/' + name}>X</Link>}
     </div>);
   }
 }
