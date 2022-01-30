@@ -6,7 +6,7 @@ export default function SubscriptionList({subs}) {
   return (
     <div className='list'>
         {subs.map(sub => {
-            return <SubscriptionItem key={sub.id} logo={sub.logo} name={sub.name} category={sub.category} price={sub.price}/>
+            return <SubscriptionItem key={sub.id} id={sub.id} logo={sub.logo} name={sub.name} category={sub.category} price={sub.price}/>
         })}
     </div>
   );

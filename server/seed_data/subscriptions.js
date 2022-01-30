@@ -3,7 +3,7 @@ module.exports = [
         name: 'Ableton',
         category: 'software',
         logo: 'http://localhost:8080/static/logos/ableton.svg',
-        price: 16.50,
+        price: 16.51,
     },
     {
         name: 'Amazon',

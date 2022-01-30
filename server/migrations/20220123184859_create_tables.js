@@ -5,7 +5,7 @@ exports.up = function(knex) {
         table.increments('id').primary();
         table.string('firstName').notNullable();
         table.string('lastName').notNullable();
-        table.string('username').notNullable();
+        table.string('username').notNullable().unique();
         table.string('password').notNullable();
         table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
@@ -38,5 +38,5 @@ exports.up = function(knex) {
 
 
 exports.down = function(knex) {
-    return knex.schema.dropTable('users').dropTable('subscriptions').dropTableIfExists('user_subs');
+    return knex.schema.dropTable('users').dropTable('subscriptions').dropTable('user_subs');
 };

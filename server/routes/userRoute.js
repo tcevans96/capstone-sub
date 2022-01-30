@@ -6,9 +6,12 @@ router.route('/')
     .get(userController.index)
     .post(userController.newUser)
     
-router.route('/subs')
+router.route('/:userId')
     .get(userController.subIndex)    
-    .post(userController.userSubs);
+    .post(userController.userSubs)
+    
 
+router.route('/delete')
+    .delete(userController.cancelSub);
 
 module.exports = router;

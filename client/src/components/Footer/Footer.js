@@ -5,6 +5,8 @@ import home from '../../assets/icons/bx-home.svg';
 import discover from '../../assets/icons/bx-paper-plane.svg'
 import calendar from '../../assets/icons/bx-calendar.svg'
 
+const id = sessionStorage.getItem('currentUserId')
+
 export default function Footer() {
   return (
     <footer className='footer'>
@@ -16,7 +18,7 @@ export default function Footer() {
             <img className='footer__icon' src={discover} alt="dashboard icon" />
             <span className='footer__page'>Discover</span>
         </Link>
-        <Link to='/subscriptions' className='footer__link'>
+        <Link to={'/subscriptions/' + id} className='footer__link'>
             <img className='footer__icon' src={calendar} alt="dashboard icon" />
             <span className='footer__page'>Subscriptions</span>
         </Link>

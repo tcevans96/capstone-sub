@@ -37,7 +37,23 @@ exports.index = (_req, res) => {
     .catch((err) => res.status(400).send(`Error adding subscription: ${err}`));
   };
 
-  exports.subIndex = (_req,res) => {
-    
+  exports.subIndex = (req,res) => {
+    knex('user_subs')
+    .where('user_id', req.params.userId)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => res.status(400).send(`Error getting subscription: ${err}`));
+  };
 
+  exports.cancelSub = (req,res) => {
+    console.log(req.body);
+
+    knex('user_subs')
+    .where('id', req.body.id)
+    .del()
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => res.status(400).send(`Error cancelling subscription: ${err}`));
   };
