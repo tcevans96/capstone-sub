@@ -18,7 +18,7 @@ function App() {
           <Route path="/dashboard" exact component={Dashboard}/>
           <Route path="/discover" exact component={DiscoverPage}/>
           <Route path="/subscriptions/:userId" exact component={SubsPage}/>
-          <Route path="/details/:id" exact component={DetailsPage}/>
+          <Route path="/details/:name" exact component={DetailsPage}/>
 
         </Switch>
       </BrowserRouter>

@@ -11,7 +11,8 @@ router.route('/:userId')
     .post(userController.userSubs)
     
 
-router.route('/delete')
+router.route('/subs/:name')
+    .get(userController.getSub)
     .delete(userController.cancelSub);
 
 module.exports = router;

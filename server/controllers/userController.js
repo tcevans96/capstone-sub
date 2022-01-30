@@ -50,10 +50,21 @@ exports.index = (_req, res) => {
     console.log(req.body);
 
     knex('user_subs')
-    .where('id', req.body.id)
+    .where('name', req.params.name)
     .del()
     .then((data) => {
       res.status(200).json(data);
     })
     .catch((err) => res.status(400).send(`Error cancelling subscription: ${err}`));
   };
+
+
+  exports.getSub = (req,res) => {
+
+    knex('user_subs')
+    .where('name', req.params.name)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => res.status(400).send(`Error getting subscription details: ${err}`));
+  }

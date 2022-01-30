@@ -36,7 +36,7 @@ export default class SubsPage extends Component {
         monthlyFees += subs[i].price;
       }
       
-      this.setState({totalMonthlyFees: monthlyFees})
+      return monthlyFees;
   }
 
   render() {
@@ -48,7 +48,7 @@ export default class SubsPage extends Component {
                 <h1>My Subscriptions</h1>
                 <div className='subs__fees'>
                   <span>Total Monthly Fees: </span>
-                  <span>${this.state.totalMonthlyFees}</span>
+                  <span>${this.getMonthlyFees()}</span>
                 </div>
                 {this.state.subscriptions.map((sub)=>{
                   return <SubscriptionItem key={sub.id} logo={sub.logo} name={sub.name} price={sub.price}/>
