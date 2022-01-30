@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect, Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './DetailsPage.scss';
@@ -6,11 +7,12 @@ import axios from 'axios';
 
 export default class DetailsPage extends Component {
   state={
-    sub: {} 
+    sub: {},
+    isCancelled: false
   }
 
   componentDidMount(){
-    const subName = this.props.match.params.name;
+    let subName = this.props.match.params.name;
     console.log(subName);
     axios.get(`http://localhost:8080/users/subs/${subName}`)
     .then((response)=>{
@@ -18,11 +20,19 @@ export default class DetailsPage extends Component {
     })
   }
 
-  handleCancelSub(){
-    axios.delete()
+  handleCancelSub(name){
+    axios.delete(`http://localhost:8080/users/subs/${name}`)
+    .then(()=>{
+      alert('Subscription Cancelled')
+      this.setState({
+        isCancelled: true
+      })
+    })
   }
   
   render() {
+    if(this.state.isCancelled){return <Redirect to={'/subscriptions/' + sessionStorage.getItem('currentUserId')}/>}
+    
     const {name,price,logo} = this.state.sub;
 
     return (
@@ -32,8 +42,8 @@ export default class DetailsPage extends Component {
             <h1>{name}</h1>
             <img className='details__logo' src={logo} alt="logo" />
             <div className='details__options'>
-              <button className='details__button'>Renew</button>
-              <button className='details__button'>Cancel</button>
+              <Link className='details__button' to={'/subscriptions/' + sessionStorage.getItem('currentUserId')}>Renew</Link>
+              <button onClick={()=>{this.handleCancelSub(name)}} className='details__button'>Cancel</button>
             </div>
             <div className='details__history'>
                <h2>History</h2>

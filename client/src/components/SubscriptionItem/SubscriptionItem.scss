@@ -16,6 +16,10 @@
     width: 100%;
     font-family: 'Quicksand';
     font-weight: bold;
+
+    &:hover{
+        transform: translate(2px,-2px);
+    }
     
     &__logo{
         height: 3rem;

@@ -47,7 +47,6 @@ exports.index = (_req, res) => {
   };
 
   exports.cancelSub = (req,res) => {
-    console.log(req.body);
 
     knex('user_subs')
     .where('name', req.params.name)
