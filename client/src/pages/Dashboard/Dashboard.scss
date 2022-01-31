@@ -2,7 +2,7 @@
 
 
 .dashboard{
-    padding: 1rem;
+    
     height: 100vh;
     background-color: $color-secondary-light;
     color: $color-secondary-light;
@@ -11,5 +11,27 @@
     background-size: cover;
     margin: 0;
     margin-top: 4.5rem;
+
+    &__graph{
+        width: 100%;
+        padding: 0;
+    }
+
+    &__container{
+        padding: 1rem;
+    }
+
+    &__summary{
+        background-color: $color-secondary-dark;
+        border-radius: 20px;
+        padding: 0.25rem 1rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    &__line{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
     
 }
