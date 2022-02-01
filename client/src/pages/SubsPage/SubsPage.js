@@ -36,7 +36,7 @@ export default class SubsPage extends Component {
         monthlyFees += subs[i].price;
       }
       
-      return monthlyFees;
+      return monthlyFees.toFixed(2);
   }
 
   render() {

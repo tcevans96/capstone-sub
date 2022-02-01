@@ -1,14 +1,47 @@
 @use '../../styles/partials/variables' as *;
 
 
+
 .discover{
     padding: 1rem;
-    height: 100%;
+    min-height: 100vh;
+    max-height: 300vh;
     background-color: $color-secondary-light;
     color: $color-secondary-light;
     background-image: url('../../assets/images/wave-pattern.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 4.5rem 0;
+
+    &__category{
+        margin-right: 1rem;
+        border-radius: 10px;
+        font-family: 'Quicksand';
+        padding: 0.25rem 1rem;
+        height: 3rem;
+        width: 15rem;
+        font-size: 1rem;
+        color: white;
+        background-color: $color-secondary-dark;
+    }
+
+    &__input{
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button{
+        font-family: 'Quicksand';
+        font-size: 1rem;
+        color: white;
+        background-color: #977068;
+        border-style: none;
+        border-radius: 10px;
+        padding: 0.5rem;
+        height: 3rem;
+        width: 6rem;
+        
+    }
     
 }

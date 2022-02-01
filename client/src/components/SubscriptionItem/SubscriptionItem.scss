@@ -34,4 +34,24 @@
         font-size: 1rem;
         font-family: 'Quicksand';
     }
+
+    &__name{
+        width: 7.1875rem;
+        margin-left: 1rem;
+    }
+
+    &--left{
+        display: flex;
+        align-items: center;
+    }
+
+    &--right{
+        display: flex;
+        align-items: center;
+    }
+
+    &__price{
+        width: 3.75rem;
+        margin-right: 2rem;
+    }
 }
