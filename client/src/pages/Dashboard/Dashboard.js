@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './Dashboard.scss';
-import graph from '../../assets/images/wave-chart.svg'
+import graph from '../../assets/images/wave-chart-2.svg'
 export default class Dashboard extends Component {
 
   render() {
@@ -10,6 +10,12 @@ export default class Dashboard extends Component {
         <div>
             <Header/>
             <main className='dashboard'>
+                <div className='dashboard__top'>
+                    <h2 className='dashboard__welcome'>Welcome {sessionStorage.getItem('currentUserName')}</h2>
+                    <h2 className='dashboard__title'>This Month's Spend</h2>
+                    <h1 className='dashboard__price'>$543.18</h1>
+                    <span>Discover Card XXXX 5812</span>
+                </div>
                 <img className='dashboard__graph' src={graph} alt="graph" />
                 <div className='dashboard__container'>
                     <div className='dashboard__summary'>
