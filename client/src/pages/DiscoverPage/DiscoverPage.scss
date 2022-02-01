@@ -28,7 +28,11 @@
     &__input{
         margin-bottom: 2rem;
         display: flex;
-        justify-content: center;
+        justify-content: center;   
+    }
+
+    &__category{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
     &__button{
@@ -41,6 +45,7 @@
         padding: 0.5rem;
         height: 3rem;
         width: 6rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         
     }
     

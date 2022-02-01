@@ -7,9 +7,9 @@ import logout from '../../assets/icons/bx-log-out.svg'
 export default function Header() {
   return (
    <header className='header'>
-       <img className='header__icon' src={menu} alt="" />
+       <Link to='/'><img className='header__icon' src={menu} alt="" /></Link>
        <h1 className='header__title'>sub</h1>
-       <Link to='/' className='header_link'><img className='header__icon' src={logout} alt="" /></Link>
+       <Link to='/'><img className='header__icon' src={logout} alt="" /></Link>
    </header>
   );
 }
