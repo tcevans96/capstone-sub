@@ -11,8 +11,7 @@ export default class Dashboard extends Component {
             <Header/>
             <main className='dashboard'>
                 <div className='dashboard__top'>
-                    <h2 className='dashboard__welcome'>Welcome {sessionStorage.getItem('currentUserName')}</h2>
-                    <h2 className='dashboard__title'>This Month's Spend</h2>
+                    <h2 className='dashboard__title'>This Month's Spend for {sessionStorage.getItem('currentUserName')} </h2>
                     <h1 className='dashboard__price'>$543.18</h1>
                     <span>Discover Card XXXX 5812</span>
                 </div>

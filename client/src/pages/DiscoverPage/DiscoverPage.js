@@ -52,8 +52,9 @@ export default class DiscoverPage extends Component {
                     <option value="entertainment" >Entertainment</option>
                     <option value="software" >Software</option>
                     <option value="services" >Services</option>
+                    <option value="insurance" >Insurance</option>
                 </select>
-                <button className='discover__button'>apply</button>
+                <button className='discover__button'>Apply</button>
             </form>
             <SubscriptionList subs={isFiltered ? filteredList : subscriptions}/>
         </main>

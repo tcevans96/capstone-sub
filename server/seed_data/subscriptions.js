@@ -6,6 +6,13 @@ module.exports = [
         price: 16.51,
     },
     {
+        name: 'Allstate',
+        category: 'insurance',
+        logo: 'http://localhost:8080/static/logos/allstate-2.svg',
+        price: 138.99,
+
+    },
+    {
         name: 'Amazon',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/amazon.svg',
@@ -19,15 +26,23 @@ module.exports = [
 
     },
     {
-        name: 'Blue Apron',
+        name: 'AWS',
         category: 'services',
-        logo: 'http://localhost:8080/static/logos/blue-apron.svg',
-        price: 49.99,
+        logo: 'http://localhost:8080/static/logos/aws.svg',
+        price: 28.99,
+
+    },
+    {
+        name: 'Crunchyroll',
+        category: 'entertainment',
+        logo: 'http://localhost:8080/static/logos/crunchyroll-logo.svg',
+        price: 6.55,
+
     },
     {
         name: 'Disney Plus',
         category: 'entertainment',
-        logo: 'http://localhost:8080/static/logos/disney.svg',
+        logo: 'http://localhost:8080/static/logos/disney-plus.svg',
         price: 7.99,
 
     },
@@ -37,6 +52,13 @@ module.exports = [
         logo: 'http://localhost:8080/static/logos/dropbox.svg',
         price: 19.99,
     
+    },
+    {
+        name: 'Geico',
+        category: 'insurance',
+        logo: 'http://localhost:8080/static/logos/geico-1.svg',
+        price: 97.99,
+
     },
     {
         name: 'HBO Max',
@@ -49,13 +71,27 @@ module.exports = [
         name: 'Homechef',
         category: 'services',
         logo: 'http://localhost:8080/static/logos/homechef.svg',
-        price: 119.40,
+        price: 119.42,
     },
     {
         name: 'Hulu',
         category: 'entertainment',
-        logo: 'http://localhost:8080/static/logos/hulu.svg',
+        logo: 'http://localhost:8080/static/logos/hulu-2.svg',
         price: 6.99,
+
+    },
+    {
+        name: 'Malwarebytes',
+        category: 'software',
+        logo: 'http://localhost:8080/static/logos/malwarebytes.svg',
+        price: 3.33,
+
+    },
+    {
+        name: 'Microsoft Azure',
+        category: 'services',
+        logo: 'http://localhost:8080/static/logos/microsoft-azure.svg',
+        price: 64.99,
 
     },
     {
@@ -78,6 +114,13 @@ module.exports = [
         price: 19.99,
     },
     {
+        name: 'Progressive',
+        category: 'insurance',
+        logo: 'http://localhost:8080/static/logos/progressive.svg',
+        price: 166.99,
+
+    },
+    {
         name: 'Sling TV',
         category: 'entertainment',
         logo: 'http://localhost:8080/static/logos/sling-tv.svg',
@@ -96,16 +139,25 @@ module.exports = [
         price: 9.99,
     },
     {
-        name: 'Trunk Club',
-        category: 'services',
-        logo: 'http://localhost:8080/static/logos/trunk-club.png',
-        price: 58.99,
+        name: 'Tidal',
+        category: 'entertainment',
+        logo: 'http://localhost:8080/static/logos/tidal-icon.svg',
+        price: 9.99,
+
     },
     {
-        name: 'VRV',
-        category: 'entertainment',
-        logo: 'http://localhost:8080/static/logos/vrv.png',
+        name: 'Udemy',
+        category: 'services',
+        logo: 'http://localhost:8080/static/logos/udemy.svg',
+        price: 19.99,
+
+    },
+    {
+        name: 'USAA',
+        category: 'insurance',
+        logo: 'http://localhost:8080/static/logos/usaa-logo.svg',
         price: 9.99,
+
     },
 
 ];
