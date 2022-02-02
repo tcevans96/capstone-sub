@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
                 <div className='dashboard__top'>
                     <h2 className='dashboard__title'>This Month's Spend for {sessionStorage.getItem('currentUserName')} </h2>
                     <h1 className='dashboard__price'>$543.18</h1>
-                    <span>Discover Card XXXX 5812</span>
+                    <span>Discover Card XXXX 1234</span>
                 </div>
                 <img className='dashboard__graph' src={graph} alt="graph" />
                 <div className='dashboard__container'>
@@ -21,7 +21,7 @@ export default class Dashboard extends Component {
                         <h2>Spending Summary</h2>
                         <div className='dashboard__line'>
                             <span>Mastercard</span>
-                            <span>$1,236.20</span>
+                            <span>$236.20</span>
                         </div>
                         <div className='dashboard__line'>
                             <span>Discover</span>
@@ -33,7 +33,7 @@ export default class Dashboard extends Component {
                         </div>
                         <div className='dashboard__line'>
                             <span>Capital One</span>
-                            <span>$891.30</span>
+                            <span>$91.30</span>
                         </div>
                     </div>
                 </div>
