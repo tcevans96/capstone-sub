@@ -156,7 +156,7 @@ module.exports = [
         name: 'USAA',
         category: 'insurance',
         logo: 'http://localhost:8080/static/logos/usaa-logo.svg',
-        price: 9.99,
+        price: 52.99,
 
     },
 
