@@ -9,53 +9,68 @@ export default class LoginForm extends Component {
         currentUser: {},
         users: [],
         isLoginSuccessful: false,
-        error: 0
+        error: ''
     };
 
-    componentDidMount(){
-        axios.get('http://localhost:8080/users')
-        .then((response)=>{
-            this.setState({
-                users: response.data
-            })
-        }).catch((err) => {
-            console.log(err.response.data);
-        })
-    }
+    // componentDidMount(){
+    //     axios.get('http://localhost:8080/users')
+    //     .then((response)=>{
+    //         this.setState({
+    //             users: response.data
+    //         })
+    //     }).catch((err) => {
+    //         console.log(err.response.data);
+    //     })
+    // }
 
     handleSubmit = (event) => {
         
         event.preventDefault();
 
-        const {users} = this.state;
+        // const {users} = this.state;
 
-        const foundUser = users.find((user)=>{
-            return user.username === event.target.username.value;
-        })
+        // const foundUser = users.find((user)=>{
+        //     return user.username === event.target.username.value;
+        // })
 
         
-        if(foundUser){
-            this.setState({currentUser: foundUser})
+        // if(foundUser){
+        //     this.setState({currentUser: foundUser})
             
-            if(foundUser.password === event.target.password.value){
+        //     if(foundUser.password === event.target.password.value){
                 
-                this.setState({isLoginSuccessful: true})
-                sessionStorage.setItem('currentUserId', foundUser.id);
-                sessionStorage.setItem('currentUserName', foundUser.firstName);
-            }
-            else{this.setState({error: 1})}
-        }
-        else{this.setState({error: 2})}
+        //         this.setState({isLoginSuccessful: true})
+        //         sessionStorage.setItem('currentUserId', foundUser.id);
+        //         sessionStorage.setItem('currentUserName', foundUser.firstName);
+        //     }
+        //     else{this.setState({error: 1})}
+        // }
+        // else{this.setState({error: 2})}
 
-        event.target.reset();
+        // event.target.reset();
+
+        axios
+            .post('http://localhost:8080/users/login', {
+                username: event.target.username.value,
+                password: event.target.password.value
+            })
+            .then((response) => {
+                sessionStorage.setItem("token", response.data.token);
+                this.setState({ isLoginSuccessful: true });
+            })
+            .catch((error) => {
+                this.setState({ error: error.response.data });
+            });
     }
   
     render() {
-        const {error, isLoginSuccessful, currentUser} = this.state;
+        const {error, isLoginSuccessful} = this.state;
 
-        if(isLoginSuccessful && currentUser){
+        if(isLoginSuccessful){
             
-            return <Redirect to={{pathname: '/dashboard', state: {currentUser: currentUser}}}/>
+            // return <Redirect to={{pathname: '/dashboard', state: {currentUser: currentUser}}}/>
+
+            return <Redirect to='/dashboard' />
         }
 
         return (
